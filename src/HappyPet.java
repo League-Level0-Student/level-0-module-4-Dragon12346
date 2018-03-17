@@ -1,3 +1,4 @@
+
 //    Copyright (c) The League of Amazing Programmers 2013-2017
 //    Level 0
 
@@ -9,6 +10,7 @@ public class HappyPet {
 	// Initialize to zero.
 	static int happyness = 0;
 	static int task;
+
 	public static void main(String[] args) {
 		// 1. Ask the user what kind of pet they want to buy, and store in variable
 		pet = JOptionPane.showOptionDialog(null, "What pet do you want?", "Pets", 0, JOptionPane.INFORMATION_MESSAGE,
@@ -20,30 +22,30 @@ public class HappyPet {
 		// (eg: cuddle, food, water, take a walk, groom, clean up poop).
 		// Make sure to customize the title and question too.
 		for (int i = 0; i < 100; i++) {
-			if (happyness > 100) {
-				i = i + 10000;
-			}
 			task = JOptionPane.showOptionDialog(null, "What do you want to do with your pet?", "Actions", 0,
 					JOptionPane.INFORMATION_MESSAGE, null, new String[] { "Groom1", "Take a walk2", "Feed3", "Water4" },
 					null);
-		}
-		if (task == 1) {
-			groom();
-		}
-		else if (task == 2) {
-			take_a_walk();
-		}
-		else if (task == 3) {
-			feed();
-		}
-		else if (task == 4) {
-			Water();
+
+			if (task == 0) {
+				groom();
+			} else if (task == 1) {
+				take_a_walk();
+			} else if (task == 2) {
+				feed();
+			} else if (task == 3) {
+				Water();
+			}
+			if (happyness > 100) {
+				JOptionPane.showMessageDialog(null, "Your pet loves you!");
+				i = i + 10000;
+			}
+
 		}
 		// 5. Use user input to call the appropriate method created in step 4.
 
 		// 6. If you determine the happiness level is large enough, tell the
 		// user that he loves his pet and use break; to exit for loop.
-		
+
 	}
 
 	// 4. Create methods to handle each of your user selections.
@@ -52,53 +54,52 @@ public class HappyPet {
 	// and INCREMENT the pet's happiness Level.
 	static void groom() {
 		happyness = happyness + 4;
-		if (pet == 1) {
+		if (pet == 0) {
 			JOptionPane.showMessageDialog(null, "Your Dog barks with exitement!");
 		}
-		if (pet == 2) {
+		if (pet == 1) {
 			JOptionPane.showMessageDialog(null, "Your Cat purrs softly!");
 		}
-		if (pet == 3) {
+		if (pet == 2) {
 			JOptionPane.showMessageDialog(null, "Your Sloth is barly moving with exitement!");
-			System.out.println("hi");
 		}
 	}
 
 	static void take_a_walk() {
 		happyness = happyness + 5;
-		if (pet == 1) {
+		if (pet == 0) {
 			JOptionPane.showMessageDialog(null, "Your Dog barks with exitement!");
 		}
-		if (pet == 2) {
+		if (pet == 1) {
 			JOptionPane.showMessageDialog(null, "Your Cat purrs softly!");
 		}
-		if (pet == 3) {
+		if (pet == 2) {
 			JOptionPane.showMessageDialog(null, "Your Sloth is barly moving with exitement!");
 		}
 	}
 
 	static void feed() {
 		happyness = happyness + 3;
-		if (pet == 1) {
+		if (pet == 0) {
 			JOptionPane.showMessageDialog(null, "Your Dog barks with exitement!");
 		}
-		if (pet == 2) {
+		if (pet == 1) {
 			JOptionPane.showMessageDialog(null, "Your Cat purrs softly!");
 		}
-		if (pet == 3) {
+		if (pet == 2) {
 			JOptionPane.showMessageDialog(null, "Your Sloth is barly moving with exitement!");
 		}
 	}
 
 	static void Water() {
 		happyness = happyness + 3;
-		if (pet == 1) {
+		if (pet == 0) {
 			JOptionPane.showMessageDialog(null, "Your Dog barks with exitement!");
 		}
-		if (pet == 2) {
+		if (pet == 1) {
 			JOptionPane.showMessageDialog(null, "Your Cat purrs softly!");
 		}
-		if (pet == 3) {
+		if (pet == 2) {
 			JOptionPane.showMessageDialog(null, "Your Sloth is barly moving with exitement!");
 		}
 	}
